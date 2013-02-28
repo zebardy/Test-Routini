@@ -5,8 +5,10 @@ use Test::More;
 use base 'Exporter';
 our @EXPORT = qw(test run_me run_test);
 
-my $test_cache;
+#expose the test cache for testing purposes only
+our $test_cache;
 our $VERSION = 0.0.1;
+
 
 sub test {
   my $name = shift;
@@ -18,9 +20,12 @@ sub test {
 sub run_me {
   my $class = scalar(caller);
   my $instance = $class->new();
+  my $tests_run = 0;
   foreach my $test_name (keys %$test_cache) {
     $instance->run_test($test_name, $test_cache->{$test_name});
+    $tests_run++;
   }
+  ok $tests_run > 0, 'tests run';
 };
 
 sub run_test {
