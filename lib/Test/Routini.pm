@@ -37,6 +37,7 @@ sub run_test {
   Test::More::subtest($name, sub { &{$code}($self) });
 }
 
+__END__
 =pod
 
 =head1 NAME
