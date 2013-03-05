@@ -2,14 +2,14 @@
 
 =head1 NAME
 
-Moox::Test::Routine - A simple test framework for Moo which provides a slice of the functionality of Test::Routine without the complexity of Moose
+Test::Routini - A simple test framework primarialy for Moo/Mouse/Moose which provides a slice of the functionality of Test::Routine without the complexity of Moose
 
 =head1 SYNOPSIS
 
   use Moo;
   use Test::More;
 
-  use Moox::Test::Routine;
+  use Test::Routini;
 
   has foo => ( is => 'rw', default => sub { 'bar' } );
 
@@ -30,7 +30,7 @@ Moox::Test::Routine - A simple test framework for Moo which provides a slice of 
 
 =head1 DESCRIPTION
 
-This module provides enough of the Test::Routine look and feel to make nice tests when using Moo
+This module provides enough of the Test::Routine look and feel to make nice tests without the need for a MOP
 
 =head1 AUTHOR
 

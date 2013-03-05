@@ -1,31 +1,31 @@
 use Test::More;
 use Test::Exception;
 
-use Moox::Test::Routine;
+use Test::Routini;
 
 sub new {
     return bless({ test_attribute => "hello" }, shift);
 }
 
 Test::More::subtest("happy path", sub {
-    $Moox::Test::Routine::test_cache = undef;
-    is $Moox::Test::Routine::test_cache, undef;
+    $Test::Routini::test_cache = undef;
+    is $Test::Routini::test_cache, undef;
     my $test_sub = sub { is shift->{'test_attribute'}, "hello"; };
     test "test0" => $test_sub;
     run_me;
 } );
 
 Test::More::subtest("Test registration", sub {
-    $Moox::Test::Routine::test_cache = undef;
-    is $Moox::Test::Routine::test_cache, undef;
+    $Test::Routini::test_cache = undef;
+    is $Test::Routini::test_cache, undef;
     my $test_sub = sub { ok 1; };
     test "test1" => $test_sub;
-    is $Moox::Test::Routine::test_cache->{"test1"}, $test_sub;
+    is $Test::Routini::test_cache->{"test1"}, $test_sub;
 } );
 
 Test::More::subtest("Run registered tests", sub {
-    $Moox::Test::Routine::test_cache = undef;
-    is $Moox::Test::Routine::test_cache, undef;
+    $Test::Routini::test_cache = undef;
+    is $Test::Routini::test_cache, undef;
     my $test_run = 0;
     my $test_sub = sub { ok 1; $test_run++ };
     test "test2" => $test_sub;
@@ -35,8 +35,8 @@ Test::More::subtest("Run registered tests", sub {
 } );
 
 Test::More::subtest("Run a test with run_test", sub {
-    $Moox::Test::Routine::test_cache = undef;
-    is $Moox::Test::Routine::test_cache, undef;
+    $Test::Routini::test_cache = undef;
+    is $Test::Routini::test_cache, undef;
     my $test_sub = sub {
         my $self = shift;
         is $self, 'self';
@@ -45,8 +45,8 @@ Test::More::subtest("Run a test with run_test", sub {
 } );
 
 Test::More::subtest("run_test is called to execute each test", sub {
-    $Moox::Test::Routine::test_cache = undef;
-    is $Moox::Test::Routine::test_cache, undef;
+    $Test::Routini::test_cache = undef;
+    is $Test::Routini::test_cache, undef;
     test 'test5' => sub {
         ok 0, 'failing test';
     };
@@ -59,7 +59,7 @@ Test::More::subtest("run_test is called to execute each test", sub {
 } );
 
 #Test::More::subtest("Fail if no tests run", sub {
-#    $Moox::Test::Routine::test_cache = undef;
+#    $Test::Routini::test_cache = undef;
 #    ok !eval {  run_me() };
 ##    is($@, "tests run\n");
 #} );

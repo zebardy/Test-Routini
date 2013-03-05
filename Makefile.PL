@@ -1,7 +1,7 @@
 use inc::Module::Install;
 
-name 'moox-test-routine';
-all_from 'lib/Moox/Test/Routine.pm';
+name 'test-routini';
+all_from 'lib/Test/Routini.pm';
 
 perl_version '5.008_001';
 
