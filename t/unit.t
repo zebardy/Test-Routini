@@ -1,6 +1,9 @@
 use Test::More;
 use Test::Exception;
 
+use strict;
+use warnings;
+
 use Test::Routini;
 
 sub new {
