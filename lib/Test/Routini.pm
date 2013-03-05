@@ -1,5 +1,8 @@
 package Test::Routini;
 
+use strict;
+use warnings;
+
 use 5.008001;
 use Test::More;
 use base 'Exporter';
