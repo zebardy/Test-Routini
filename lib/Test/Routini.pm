@@ -70,7 +70,7 @@ This module provides enough of the Test::Routine look and feel to make nice test
 
 =head1 AUTHOR
 
-Aaron Moses E<lt>zebardy@gmail.comE<gt>
+Aaron Moses E<lt>zebardy@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
