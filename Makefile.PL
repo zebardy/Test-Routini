@@ -5,7 +5,5 @@ all_from 'lib/Test/Routini.pm';
 
 perl_version '5.008_001';
 
-requires 'Test::More';
-
 WriteAll;
 
