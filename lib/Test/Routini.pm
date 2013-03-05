@@ -7,7 +7,7 @@ our @EXPORT = qw(test run_me run_test);
 
 #expose the test cache for testing purposes only
 our $test_cache;
-our $VERSION = 0.0.1;
+our $VERSION = 0.1;
 
 
 sub test {
