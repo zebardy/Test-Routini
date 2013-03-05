@@ -1,5 +1,8 @@
 package Test::Routini;
 
+use strict;
+use warnings;
+
 use 5.008001;
 use Test::More;
 use base 'Exporter';
@@ -34,6 +37,7 @@ sub run_test {
   Test::More::subtest($name, sub { &{$code}($self) });
 }
 
+__END__
 =pod
 
 =head1 NAME
